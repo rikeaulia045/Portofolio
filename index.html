@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rike Aulia Elistya | Portfolio</title>
+
+  <meta name="description"
+    content="Website portofolio Rike Aulia Elistya, mahasiswa Pendidikan Teknologi Informasi Universitas Negeri Surabaya.">
+
+  <style>
+    /* ===== PENGATURAN DASAR ===== */
+    :root {
+      --primary: #315efb;
+      --primary-dark: #2044cc;
+      --navy: #142447;
+      --text: #34415c;
+      --muted: #71809b;
+      --light: #f4f7ff;
+      --white: #ffffff;
+      --border: #e5eaff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading .label {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(28px, 4vw, 38px);
+      margin: 8px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* ===== NAVIGASI ===== */
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--light);
+      color: var(--navy);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background:
+        radial-gradient(circle at 90% 10%, #dce5ff 0, transparent 32%),
+        linear-gradient(135deg, #f5f8ff, #ffffff);
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      padding: 75px 0;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: #e7edff;
+      border: 1px solid #d6e0ff;
+      padding: 7px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 5vw, 57px);
+      line-height: 1.17;
+      letter-spacing: -1.5px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 21px;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      background: var(--primary);
+      color: white;
+      font-weight: 750;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      color: white;
+    }
+
+    .profile-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .profile-card {
+      width: 280px;
+      max-width: 100%;
+      padding: 25px;
+      border-radius: 28px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 65px #2948a51a;
+      text-align: center;
+      position: relative;
+    }
+
+    .avatar {
+      width: 155px;
+      height: 155px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #315efb, #8aa5ff);
+      color: white;
+      border: 7px solid #edf1ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      font-weight: 900;
+      box-shadow: 0 10px 30px #315efb25;
+    }
+
+    .profile-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .profile-badge {
+      display: inline-block;
+      background: #eaf0ff;
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-top: 15px;
+    }
+
+    /* ===== ABOUT ME ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .about-intro {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .about-symbol {
+      width: 55px;
+      height: 55px;
+      border-radius: 15px;
+      background: #dfe7ff;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .about-intro h3,
+    .biodata h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .about-intro p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .biodata {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 35px #14244708;
+    }
+
+    .bio-item {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .bio-item:last-child {
+      border-bottom: none;
+    }
+
+    .bio-label {
+      color: var(--muted);
+    }
+
+    .bio-value {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* ===== WHAT I CAN DO ===== */
+    #skills {
+      background: var(--light);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 27px;
+      transition: 0.25s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px #315efb12;
+      border-color: #bdccff;
+    }
+
+    .skill-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      background: #eaf0ff;
+      border-radius: 14px;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 7px;
+      background: #edf1ff;
+      color: #3454cf;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    /* ===== ACHIEVEMENT / PROJECT ===== */
+    .project-card {
+      max-width: 780px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 12px 35px #14244708;
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 15px 40px #315efb15;
+      transform: translateY(-3px);
+    }
+
+    .project-art {
+      background: linear-gradient(145deg, #315efb, #7895ff);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 65px;
+      min-height: 230px;
+    }
+
+    .project-info {
+      padding: 28px;
+    }
+
+    .project-type {
+      display: inline-block;
+      color: var(--primary);
+      background: #eaf0ff;
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .project-info h3 {
+      color: var(--navy);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .project-note {
+      margin: 25px auto 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 650px;
+    }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      background: var(--light);
+    }
+
+    .contact-panel {
+      background: linear-gradient(135deg, #172a55, #315efb);
+      color: white;
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      box-shadow: 0 20px 45px #315efb20;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(27px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+
+    .contact-panel > p {
+      color: #e0e7ff;
+      max-width: 570px;
+      margin: 0 auto 25px;
+      font-size: 14px;
+    }
+
+    .email-card {
+      display: inline-block;
+      padding: 13px 18px;
+      border: 1px solid #ffffff50;
+      background: #ffffff12;
+      border-radius: 10px;
+      color: white;
+      margin-bottom: 24px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-panel .btn {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+
+    .contact-panel .btn:hover {
+      background: #edf1ff;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--primary);
+    }
+
+    /* ===== ANIMASI ===== */
+    .fade-in {
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 800px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        padding-bottom: 8px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px;
+        border-radius: 7px;
+      }
+
+      .nav-links a:hover {
+        background: var(--light);
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .profile-area {
+        grid-row: 1;
+      }
+
+      .profile-card {
+        width: 250px;
+      }
+
+      .avatar {
+        width: 135px;
+        height: 135px;
+        font-size: 42px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-art {
+        min-height: 150px;
+      }
+
+      .bio-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .about-intro,
+      .biodata,
+      .skill-card,
+      .project-info {
+        padding: 22px;
+      }
+
+      .contact-panel {
+        padding: 38px 20px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGASI -->
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home">Rike<span>.</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">What I Can Do</a>
+        <a href="#achievement">Achievement</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+
+        <div class="hero-text fade-in">
+          <span class="eyebrow">
+            MAHASISWA PENDIDIKAN TEKNOLOGI INFORMASI
+          </span>
+
+          <h1>
+            Halo, saya<br>
+            <span>Rike Aulia Elistya</span>
+          </h1>
+
+          <p class="hero-description">
+            Mahasiswa Universitas Negeri Surabaya yang memiliki
+            minat pada UI/UX Design dan teknologi informasi.
+            Saya terus mengembangkan keterampilan digital melalui
+            pembelajaran dan proyek yang saya kerjakan.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#about" class="btn">Kenali Saya ↓</a>
+            <a href="#contact" class="btn btn-outline">
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-area fade-in">
+          <div class="profile-card">
+            <div class="avatar">RA</div>
+
+            <h3>Rike Aulia Elistya</h3>
+
+            <p>
+              Pendidikan Teknologi Informasi
+            </p>
+
+            <span class="profile-badge">
+              UI/UX DESIGN ENTHUSIAST
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="label">Tentang Saya</span>
+          <h2>About Me</h2>
+          <p>Informasi singkat tentang diri dan pendidikan saya.</p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-intro">
+            <div class="about-symbol">✦</div>
+
+            <h3>Perkenalkan, Saya Rike!</h3>
+
+            <p>
+              Saya Rike Aulia Elistya, mahasiswa Program Studi
+              Pendidikan Teknologi Informasi di Universitas Negeri
+              Surabaya. Saya memiliki minat pada desain antarmuka
+              dan pengalaman pengguna (UI/UX Design), serta
+              mempelajari berbagai tools teknologi informasi.
+            </p>
+
+            <br>
+
+            <p>
+              Melalui kegiatan belajar dan pengerjaan proyek,
+              saya ingin terus memperluas pengetahuan, mengasah
+              keterampilan, dan membangun portofolio yang
+              menggambarkan perkembangan kemampuan saya.
+            </p>
+          </div>
+
+          <div class="biodata">
+            <h3>Biodata Saya</h3>
+
+            <div class="bio-item">
+              <span class="bio-label">Nama Lengkap</span>
+              <span class="bio-value">Rike Aulia Elistya</span>
+            </div>
+
+            <div class="bio-item">
+              <span class="bio-label">NIM</span>
+              <span class="bio-value">26050974045</span>
+            </div>
+
+            <div class="bio-item">
+              <span class="bio-label">Universitas</span>
+              <span class="bio-value">
+                Universitas Negeri Surabaya
+              </span>
+            </div>
+
+            <div class="bio-item">
+              <span class="bio-label">Program Studi</span>
+              <span class="bio-value">
+                Pendidikan Teknologi Informasi
+              </span>
+            </div>
+
+            <div class="bio-item">
+              <span class="bio-label">Minat</span>
+              <span class="bio-value">UI/UX Design</span>
+            </div>
+
+            <div class="bio-item">
+              <span class="bio-label">Email</span>
+              <span class="bio-value">
+                <a href="mailto:rikeauliaelistya@gmail.com"
+                   style="color:#315efb;">
+                  rikeauliaelistya@gmail.com
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I CAN DO -->
+    <section id="skills">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="label">Kemampuan Saya</span>
+          <h2>What I Can Do</h2>
+          <p>
+            Tools dan keterampilan yang saya miliki dan gunakan
+            dalam pembelajaran.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>Design & Creativity</h3>
+            <p>
+              Menggunakan tools desain untuk membuat materi visual
+              dan mendukung kebutuhan desain.
+            </p>
+            <div class="tags">
+              <span class="tag">Canva</span>
+              <span class="tag">UI/UX Interest</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>
+              Memahami dan mempelajari dasar pembuatan halaman
+              website menggunakan HTML.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h3>Database</h3>
+            <p>
+              Menggunakan SQL dalam pengerjaan proyek basis data,
+              termasuk database rumah sakit.
+            </p>
+            <div class="tags">
+              <span class="tag">SQL</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">📊</div>
+            <h3>Data & Spreadsheet</h3>
+            <p>
+              Menggunakan spreadsheet untuk membantu pengolahan
+              data dan pekerjaan administratif.
+            </p>
+            <div class="tags">
+              <span class="tag">Microsoft Excel</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">📑</div>
+            <h3>Office Productivity</h3>
+            <p>
+              Menggunakan aplikasi perkantoran untuk mendukung
+              penyusunan dokumen dan tugas.
+            </p>
+            <div class="tags">
+              <span class="tag">Microsoft Office</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENT / PROJECT -->
+    <section id="achievement">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="label">Karya Saya</span>
+          <h2>Achievement & Projects</h2>
+          <p>
+            Proyek yang pernah saya kerjakan dan ingin
+            saya kembangkan lebih lanjut.
+          </p>
+        </div>
+
+        <article class="project-card">
+
+          <div class="project-art" aria-hidden="true">
+            🗄️
+          </div>
+
+          <div class="project-info">
+            <span class="project-type">
+              DATABASE PROJECT
+            </span>
+
+            <h3>Database Rumah Sakit Menggunakan SQL</h3>
+
+            <p>
+              Proyek pembuatan database rumah sakit menggunakan
+              SQL. Proyek ini menjadi bagian dari pengalaman
+              saya dalam mempelajari pengelolaan basis data
+              dan penerapan teknologi informasi.
+            </p>
+
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Database</span>
+              <span class="tag">Rumah Sakit</span>
+            </div>
+          </div>
+
+        </article>
+
+        <p class="project-note">
+          Catatan: bagian ini menampilkan proyek yang kamu sebutkan,
+          bukan klaim penghargaan atau sertifikasi. Kamu dapat
+          menambahkan dokumentasi proyek jika tersedia.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+          <h2>Mari Terhubung!</h2>
+
+          <p>
+            Terima kasih telah mengunjungi portofolio saya.
+            Silakan hubungi saya melalui email untuk komunikasi
+            atau bertukar informasi.
+          </p>
+
+          <a class="email-card"
+             href="mailto:rikeauliaelistya@gmail.com">
+            ✉ rikeauliaelistya@gmail.com
+          </a>
+
+          <br>
+
+          <a class="btn"
+             href="mailto:rikeauliaelistya@gmail.com?subject=Halo%20Rike">
+            Kirim Email ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span>
+        <strong>Rike Aulia Elistya</strong>.
+        Dibuat dengan HTML, CSS, dan JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Menampilkan tahun secara otomatis
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Membuka dan menutup menu pada perangkat mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Menutup menu setelah tautan navigasi dipilih
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  </script>
+
+</body>
+</html>
